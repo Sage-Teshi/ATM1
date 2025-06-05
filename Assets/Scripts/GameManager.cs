@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        userData = new UserData("Kim", 111111, 55555);
+        userData = new UserData("Kim", 100000, 50000);
     }
 
     void Start()

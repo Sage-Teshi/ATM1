@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Runtime.InteropServices.WindowsRuntime;
-using TMPro;
-using Unity.VisualScripting;
+﻿using TMPro;
 using UnityEngine;
 
 public class Popupbank : MonoBehaviour
@@ -15,7 +10,8 @@ public class Popupbank : MonoBehaviour
 
     public GameObject NotEnoughPanel;
 
-    public TMP_InputField amountInputField;
+    public TMP_InputField depositInputField;
+    public TMP_InputField withdrawalInputField;
 
 
     // 입금 메뉴 보기
@@ -35,7 +31,7 @@ public class Popupbank : MonoBehaviour
     // 입금 직접 입력 값 계산 메서드
     public void DepositFormInput()
     {
-        int value = GetInputValue();
+        int value = GetInputValue(depositInputField);
         
         if (value > 0)
         {
@@ -47,7 +43,7 @@ public class Popupbank : MonoBehaviour
     // 출금 직접 입력 값 계산 메서드 
     public void withdrawalFormInput()
     {
-        int value = GetInputValue();
+        int value = GetInputValue(withdrawalInputField);
         
         if (value > 0)
         {
@@ -63,13 +59,13 @@ public class Popupbank : MonoBehaviour
         if (value > 0)
         {
             // 갖고 있는 현금이 입금 금액보다 많을 때 실행
-            if (GameManager.Instance.userData.cashValue > value)
+            if (GameManager.Instance.userData.cashValue >= value)
             {
                 // 입금 실행
                 GameManager.Instance.userData.cashValue -= value;
                 GameManager.Instance.userData.balance += value;
             }
-            // 부족하면
+            // 부족하면 실행
             else
             {
                 // 잔액 부족 메시지 출력
@@ -82,7 +78,7 @@ public class Popupbank : MonoBehaviour
     public void Withdrawal(int value)
     {
         // 통장의 남은 금액이 출금 금액보다 많을 때 실행
-        if (GameManager.Instance.userData.balance > value)
+        if (GameManager.Instance.userData.balance >= value)
         {
             // 출금 실행
             GameManager.Instance.userData.balance -= value;
@@ -98,9 +94,9 @@ public class Popupbank : MonoBehaviour
     }
 
     // 입출금 값 직접 입력 받아오기 메서드
-    public int GetInputValue()
+    public int GetInputValue(TMP_InputField inputField)
     {
-        string input = amountInputField.text;
+        string input = inputField.text;
 
         if (int.TryParse(input, out int result))
         {

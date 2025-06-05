@@ -4872,7 +4872,8 @@ MonoBehaviour:
   depositPanel: {fileID: 263401628}
   withdrawalPanel: {fileID: 79462142}
   NotEnoughPanel: {fileID: 250903841}
-  amountInputField: {fileID: 1744416501}
+  depositInputField: {fileID: 1744416501}
+  withdrawalInputField: {fileID: 2033551601}
 --- !u!1 &1108537890
 GameObject:
   m_ObjectHideFlags: 0
@@ -5915,7 +5916,7 @@ GameObject:
   - component: {fileID: 1744416502}
   - component: {fileID: 1744416501}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: DepositInputFiled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6875,7 +6876,7 @@ GameObject:
   - component: {fileID: 2033551602}
   - component: {fileID: 2033551601}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: WithdrawalInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
