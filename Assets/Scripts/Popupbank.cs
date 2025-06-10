@@ -22,6 +22,8 @@ public class Popupbank : MonoBehaviour
 
     public TextMeshProUGUI userNameText;
 
+    public LoginUI loginUI;
+
 
     // 입금 메뉴 보기
     public void ShowDeposit()
@@ -224,6 +226,9 @@ public class Popupbank : MonoBehaviour
         // 현재 로그인 정보 초기화
         GameManager.Instance.currentAccount = null;
 
+        // 입력칸 초기화
+        loginUI.ClearInputFields();
+
         // 로그인 화면 다시 보여주기 
         loginPanel.SetActive(true);
 
@@ -232,7 +237,6 @@ public class Popupbank : MonoBehaviour
 
 
     }
-
 
 
     // 잔액 부족 창 표시 메서드

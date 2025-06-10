@@ -34,4 +34,10 @@ public class LoginUI : MonoBehaviour
         loginPanel.SetActive(false);
         createPanel.SetActive(true);
     }
+
+    public void ClearInputFields()
+    {
+        inputId.text = "";
+        inputPw.text = "";
+    }
 }

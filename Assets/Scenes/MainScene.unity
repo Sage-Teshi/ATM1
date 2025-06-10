@@ -8207,6 +8207,7 @@ MonoBehaviour:
   targetInputField: {fileID: 1821389983}
   amountInputField: {fileID: 1067985691}
   userNameText: {fileID: 148907592}
+  loginUI: {fileID: 202645617}
 --- !u!1 &1108537890
 GameObject:
   m_ObjectHideFlags: 0
