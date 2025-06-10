@@ -19,7 +19,6 @@ public class LoginUI : MonoBehaviour
         {
             GameManager.Instance.currentAccount = AccountManager.Instance.GetAccountById(id);
 
-            Debug.Log("로그인 성공!");
             loginPanel.SetActive(false);
             bankPanel.SetActive(true);
         }
